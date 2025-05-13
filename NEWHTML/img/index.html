@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p class="paragraph" id="my-tag">this is a paragraph</p>
+    <p class="paragraph" id="my-tag">this is a paragraph</p>
+
+    <img id="image" src="img/img2.jpg" alt="image" />
+
+    <button id="clickBtn">Click Here</button>
+  </body>
+  <style>
+    img {
+      height: 250px;
+    }
+  </style>
+
+  <script>
+    document.getElementById("my-tag");
+    document.getElementsByClassName("paragraph");
+    document.getElementsByTagName("p");
+    document.querySelector("paragraph");
+    document.querySelectorAll("paragraph");
+
+    const p = document.getElementById("my-tag");
+    console.log(p.textContent);
+
+    //change/manipulate image src on hover
+
+    const image = document.getElementById("image");
+
+    function changeImage() {
+      image.src = "img/img1.jpg"; // Example new image
+    }
+
+    function resetImage() {
+      image.src = "img/img2.jpg"; // Original image
+    }
+
+    image.addEventListener("mouseover", changeImage);
+    image.addEventListener("mouseout", resetImage);
+
+    // EVENT LIOSTENERS = ON CLICK, MOUSEOVER, MOUSEOUT, SUBMIT, CHANGE
+
+    function alertSomething() {
+      alert("The button was clicked");
+    }
+
+    document
+      .getElementById("clickBtn")
+      .addEventListener("click", alertSomething);
+  </script>
+</html>
